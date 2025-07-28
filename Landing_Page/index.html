@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthcare Services</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <!-- Logo -->
+            <a class="navbar-brand fw-bold" href="#">
+                <i class="bi bi-heart-pulse me-2"></i>HealthCare.Ice
+            </a>
+            
+            <!-- Mobile toggle button -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <!-- Navigation Links -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="search-doctor.html">
+                            <i class="bi bi-calendar-check me-1"></i>Appointments
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="reviews.html">
+                            <i class="bi bi-star me-1"></i>Reviews
+                        </a>
+                    </li>
+                </ul>
+                
+                <!-- Auth buttons -->
+                <div class="d-flex">
+                    <a href="signup.html" class="btn btn-outline-light me-2">
+                        <i class="bi bi-person-plus me-1"></i>Sign Up
+                    </a>
+                    <a href="login.html" class="btn btn-light">
+                        <i class="bi bi-box-arrow-in-right me-1"></i>Login
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero bg-light py-5">
+        <div class="container">
+            <div class="row align-items-center min-vh-75">
+                <div class="col-lg-6">
+                    <h1 class="display-4 fw-bold text-primary mb-4">
+                        Your Health, Our Priority
+                    </h1>
+                    <p class="lead mb-4 text-muted">
+                        Experience world-class healthcare with our team of expert doctors and state-of-the-art facilities. 
+                        Book your appointment today and take the first step towards better health.
+                    </p>
+                    <div class="d-flex flex-column flex-sm-row gap-3">
+                        <a href="search-doctor.html" class="btn btn-primary btn-lg">
+                            <i class="bi bi-calendar-plus me-2"></i>Book Appointment
+                        </a>
+                        <button class="btn btn-outline-primary btn-lg">
+                            <i class="bi bi-play-circle me-2"></i>Learn More
+                        </button>
+                    </div>
+                    
+                    <!-- Stats -->
+                    <div class="row mt-5">
+                        <div class="col-4">
+                            <div class="text-center">
+                                <h3 class="fw-bold text-primary">500+</h3>
+                                <p class="small text-muted">Happy Patients</p>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="text-center">
+                                <h3 class="fw-bold text-primary">50+</h3>
+                                <p class="small text-muted">Expert Doctors</p>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="text-center">
+                                <h3 class="fw-bold text-primary">24/7</h3>
+                                <p class="small text-muted">Support</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="text-center">
+                        <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                             alt="Healthcare Team" 
+                             class="img-fluid rounded-3 shadow-lg">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

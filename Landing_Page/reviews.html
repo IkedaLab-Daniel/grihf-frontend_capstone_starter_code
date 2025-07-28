@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reviews - Healthcare Services</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <!-- Logo -->
+            <a class="navbar-brand fw-bold" href="index.html">
+                <i class="bi bi-heart-pulse me-2"></i>HealthCare+
+            </a>
+            
+            <!-- Mobile toggle button -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <!-- Navigation Links -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="search-doctor.html">
+                            <i class="bi bi-calendar-check me-1"></i>Appointments
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="reviews.html">
+                            <i class="bi bi-star me-1"></i>Reviews
+                        </a>
+                    </li>
+                </ul>
+                
+                <!-- Auth buttons -->
+                <div class="d-flex">
+                    <a href="signup.html" class="btn btn-outline-light me-2">
+                        <i class="bi bi-person-plus me-1"></i>Sign Up
+                    </a>
+                    <a href="login.html" class="btn btn-light">
+                        <i class="bi bi-box-arrow-in-right me-1"></i>Login
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Reviews Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <!-- Header -->
+            <div class="row mb-5">
+                <div class="col-12 text-center">
+                    <h1 class="display-4 fw-bold text-primary">Patient Reviews</h1>
+                    <p class="lead text-muted">Share your experience and help others choose the right doctor</p>
+                </div>
+            </div>
+
+            <!-- My Appointments & Reviews Table -->
+            <div class="row mb-5">
+                <div class="col-12">
+                    <div class="card shadow">
+                        <div class="card-header bg-primary text-white">
+                            <h4 class="mb-0"><i class="bi bi-clipboard-data me-2"></i>My Appointments & Reviews</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-hover">
+                                    <thead class="table-light">
+                                        <tr>
+                                            <th>Doctor Name</th>
+                                            <th>Specialty</th>
+                                            <th>Appointment Date</th>
+                                            <th>Review Status</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <img src="./doctor.svg" alt="Dr. Sarah Johnson" class="rounded-circle me-2" width="40" height="40">
+                                                    <strong>Dr. Sarah Johnson</strong>
+                                                </div>
+                                            </td>
+                                            <td>Cardiologist</td>
+                                            <td>July 15, 2025</td>
+                                            <td>
+                                                <span class="badge bg-success">
+                                                    <i class="bi bi-check-circle me-1"></i>Reviewed
+                                                </span>
+                                            </td>
+                                            <td>
+                                                <button class="btn btn-outline-primary btn-sm" disabled>
+                                                    <i class="bi bi-star me-1"></i>Already Reviewed
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <img src="./doctor.svg" alt="Dr. Michael Chen" class="rounded-circle me-2" width="40" height="40">
+                                                    <strong>Dr. Michael Chen</strong>
+                                                </div>
+                                            </td>
+                                            <td>Dentist</td>
+                                            <td>July 20, 2025</td>
+                                            <td>
+                                                <span class="badge bg-warning text-dark">
+                                                    <i class="bi bi-clock me-1"></i>Pending Review
+                                                </span>
+                                            </td>
+                                            <td>
+                                                <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#reviewModal" onclick="setReviewDoctor('Dr. Michael Chen', 'Dentist')">
+                                                    <i class="bi bi-star me-1"></i>Write Review
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <img src="./doctor.svg" alt="Dr. Emily Rodriguez" class="rounded-circle me-2" width="40" height="40">
+                                                    <strong>Dr. Emily Rodriguez</strong>
+                                                </div>
+                                            </td>
+                                            <td>Dermatologist</td>
+                                            <td>July 25, 2025</td>
+                                            <td>
+                                                <span class="badge bg-warning text-dark">
+                                                    <i class="bi bi-clock me-1"></i>Pending Review
+                                                </span>
+                                            </td>
+                                            <td>
+                                                <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#reviewModal" onclick="setReviewDoctor('Dr. Emily Rodriguez', 'Dermatologist')">
+                                                    <i class="bi bi-star me-1"></i>Write Review
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Reviews Section -->
+            <div class="row">
+                <div class="col-12">
+                    <h3 class="fw-bold text-primary mb-4">Recent Patient Reviews</h3>
+                </div>
+            </div>
+
+            <!-- Review Cards -->
+            <div class="row g-4">
+                <!-- Review 1 -->
+                <div class="col-lg-6">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body p-4">
+                            <div class="d-flex align-items-center mb-3">
+                                <img src="./doctor.svg" alt="Dr. Sarah Johnson" class="rounded-circle me-3" width="60" height="60">
+                                <div>
+                                    <h5 class="card-title fw-bold text-primary mb-1">Dr. Sarah Johnson</h5>
+                                    <p class="text-muted mb-0">Cardiologist</p>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <span class="text-warning fs-5">
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                </span>
+                                <span class="text-muted ms-2">5.0</span>
+                            </div>
+                            
+                            <blockquote class="blockquote">
+                                <p class="mb-3">"Dr. Johnson is absolutely amazing! She took the time to listen to all my concerns and explained everything clearly. The treatment plan she recommended worked perfectly. Highly recommend!"</p>
+                                <footer class="blockquote-footer">
+                                    <cite>John Smith</cite> • <small class="text-muted">July 16, 2025</small>
+                                </footer>
+                            </blockquote>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="col-lg-6">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body p-4">
+                            <div class="d-flex align-items-center mb-3">
+                                <img src="./doctor.svg" alt="Dr. James Wilson" class="rounded-circle me-3" width="60" height="60">
+                                <div>
+                                    <h5 class="card-title fw-bold text-primary mb-1">Dr. James Wilson</h5>
+                                    <p class="text-muted mb-0">Neurologist</p>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <span class="text-warning fs-5">
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-half"></i>
+                                </span>
+                                <span class="text-muted ms-2">4.5</span>
+                            </div>
+                            
+                            <blockquote class="blockquote">
+                                <p class="mb-3">"Very professional and knowledgeable doctor. The consultation was thorough and he answered all my questions patiently. The clinic staff was also very helpful."</p>
+                                <footer class="blockquote-footer">
+                                    <cite>Maria Garcia</cite> • <small class="text-muted">July 14, 2025</small>
+                                </footer>
+                            </blockquote>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="col-lg-6">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body p-4">
+                            <div class="d-flex align-items-center mb-3">
+                                <img src="./doctor.svg" alt="Dr. Lisa Thompson" class="rounded-circle me-3" width="60" height="60">
+                                <div>
+                                    <h5 class="card-title fw-bold text-primary mb-1">Dr. Lisa Thompson</h5>
+                                    <p class="text-muted mb-0">Pediatrician</p>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <span class="text-warning fs-5">
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                </span>
+                                <span class="text-muted ms-2">5.0</span>
+                            </div>
+                            
+                            <blockquote class="blockquote">
+                                <p class="mb-3">"Dr. Thompson is wonderful with children! My daughter felt comfortable immediately. She explained everything in a way both my daughter and I could understand. Excellent care!"</p>
+                                <footer class="blockquote-footer">
+                                    <cite>Jennifer Lee</cite> • <small class="text-muted">July 12, 2025</small>
+                                </footer>
+                            </blockquote>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 4 -->
+                <div class="col-lg-6">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body p-4">
+                            <div class="d-flex align-items-center mb-3">
+                                <img src="./doctor.svg" alt="Dr. Robert Garcia" class="rounded-circle me-3" width="60" height="60">
+                                <div>
+                                    <h5 class="card-title fw-bold text-primary mb-1">Dr. Robert Garcia</h5>
+                                    <p class="text-muted mb-0">Orthopedic</p>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <span class="text-warning fs-5">
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star"></i>
+                                </span>
+                                <span class="text-muted ms-2">4.0</span>
+                            </div>
+                            
+                            <blockquote class="blockquote">
+                                <p class="mb-3">"Great experience overall. Dr. Garcia was thorough in his examination and provided clear treatment options. The recovery process went smoothly thanks to his guidance."</p>
+                                <footer class="blockquote-footer">
+                                    <cite>David Miller</cite> • <small class="text-muted">July 10, 2025</small>
+                                </footer>
+                            </blockquote>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Review Modal -->
+    <div class="modal fade" id="reviewModal" tabindex="-1" aria-labelledby="reviewModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title" id="reviewModalLabel">
+                        <i class="bi bi-star me-2"></i>Write a Review
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="reviewForm">
+                        <!-- Doctor Info -->
+                        <div class="alert alert-info">
+                            <strong>Reviewing:</strong> <span id="reviewDoctorName"></span> - <span id="reviewDoctorSpecialty"></span>
+                        </div>
+
+                        <!-- Patient Name -->
+                        <div class="mb-3">
+                            <label for="patientName" class="form-label">Your Name</label>
+                            <input type="text" class="form-control" id="patientName" placeholder="Enter your full name" required>
+                        </div>
+
+                        <!-- Star Rating -->
+                        <div class="mb-3">
+                            <label class="form-label">Rating</label>
+                            <div class="star-rating">
+                                <input type="radio" id="star5" name="rating" value="5">
+                                <label for="star5" class="star"><i class="bi bi-star-fill"></i></label>
+                                <input type="radio" id="star4" name="rating" value="4">
+                                <label for="star4" class="star"><i class="bi bi-star-fill"></i></label>
+                                <input type="radio" id="star3" name="rating" value="3">
+                                <label for="star3" class="star"><i class="bi bi-star-fill"></i></label>
+                                <input type="radio" id="star2" name="rating" value="2">
+                                <label for="star2" class="star"><i class="bi bi-star-fill"></i></label>
+                                <input type="radio" id="star1" name="rating" value="1">
+                                <label for="star1" class="star"><i class="bi bi-star-fill"></i></label>
+                            </div>
+                        </div>
+
+                        <!-- Review Text -->
+                        <div class="mb-3">
+                            <label for="reviewText" class="form-label">Your Review</label>
+                            <textarea class="form-control" id="reviewText" rows="5" placeholder="Share your experience with this doctor..." required></textarea>
+                            <div class="form-text">Please be honest and constructive in your feedback.</div>
+                        </div>
+
+                        <!-- Photo Upload (Optional) -->
+                        <div class="mb-3">
+                            <label for="reviewPhoto" class="form-label">Add Photo (Optional)</label>
+                            <input type="file" class="form-control" id="reviewPhoto" accept="image/*">
+                            <div class="form-text">You can attach a photo if relevant to your experience.</div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary" onclick="submitReview()">
+                        <i class="bi bi-send me-1"></i>Submit Review
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom CSS for Star Rating -->
+    <style>
+        .star-rating {
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: flex-end;
+            gap: 5px;
+        }
+        
+        .star-rating input {
+            display: none;
+        }
+        
+        .star-rating label {
+            cursor: pointer;
+            color: #ddd;
+            font-size: 1.5rem;
+            transition: color 0.2s;
+        }
+        
+        .star-rating input:checked ~ label,
+        .star-rating label:hover,
+        .star-rating label:hover ~ label {
+            color: #ffc107;
+        }
+    </style>
+
+    <!-- JavaScript -->
+    <script>
+        function setReviewDoctor(doctorName, specialty) {
+            document.getElementById('reviewDoctorName').textContent = doctorName;
+            document.getElementById('reviewDoctorSpecialty').textContent = specialty;
+        }
+
+        function submitReview() {
+            const form = document.getElementById('reviewForm');
+            const formData = new FormData(form);
+            
+            // Get rating
+            const rating = document.querySelector('input[name="rating"]:checked');
+            if (!rating) {
+                alert('Please select a rating');
+                return;
+            }
+
+            // Basic validation
+            const patientName = document.getElementById('patientName').value;
+            const reviewText = document.getElementById('reviewText').value;
+            
+            if (!patientName || !reviewText) {
+                alert('Please fill in all required fields');
+                return;
+            }
+
+            // Here you would typically send the data to your server
+            alert('Thank you for your review! It has been submitted successfully.');
+            
+            // Close modal and reset form
+            const modal = bootstrap.Modal.getInstance(document.getElementById('reviewModal'));
+            modal.hide();
+            form.reset();
+        }
+    </script>
+</body>
+</html>

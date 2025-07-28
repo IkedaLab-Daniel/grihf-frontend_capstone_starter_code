@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find a Doctor - Healthcare Services</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <!-- Logo -->
+            <a class="navbar-brand fw-bold" href="index.html">
+                <i class="bi bi-heart-pulse me-2"></i>HealthCare.Ice
+            </a>
+            
+            <!-- Mobile toggle button -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <!-- Navigation Links -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="search-doctor.html">
+                            <i class="bi bi-calendar-check me-1"></i>Appointments
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="reviews.html">
+                            <i class="bi bi-star me-1"></i>Reviews
+                        </a>
+                    </li>
+                </ul>
+                
+                <!-- Auth buttons -->
+                <div class="d-flex">
+                    <a href="signup.html" class="btn btn-outline-light me-2">
+                        <i class="bi bi-person-plus me-1"></i>Sign Up
+                    </a>
+                    <a href="login.html" class="btn btn-light">
+                        <i class="bi bi-box-arrow-in-right me-1"></i>Login
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Find a Doctor Section -->
+    <section class="py-5 bg-light min-vh-100">
+        <div class="container">
+            <!-- Heading -->
+            <div class="text-center mb-5">
+                <h1 class="display-4 fw-bold text-primary">Find a Doctor</h1>
+                <p class="lead text-muted">Search for the best healthcare professionals</p>
+            </div>
+
+            <!-- Doctor Graphic -->
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-6 col-md-8">
+                    <div class="text-center">
+                        <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                             alt="Doctor Consultation" 
+                             class="img-fluid rounded-3 shadow-lg">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Search Bar -->
+            <div class="row justify-content-center">
+                <div class="col-lg-8 col-md-10">
+                    <div class="card shadow">
+                        <div class="card-body p-4">
+                            <form action="doctor-results.html" method="get">
+                                <div class="row g-3">
+                                    <!-- Specialty Search -->
+                                    <div class="col-md-6">
+                                        <label for="specialty" class="form-label">Specialty</label>
+                                        <select class="form-select" id="specialty" name="specialty">
+                                            <option value="">All Specialties</option>
+                                            <option value="cardiologist">Cardiologist</option>
+                                            <option value="dentist">Dentist</option>
+                                            <option value="dermatologist">Dermatologist</option>
+                                            <option value="neurologist">Neurologist</option>
+                                            <option value="orthopedic">Orthopedic</option>
+                                            <option value="pediatrician">Pediatrician</option>
+                                            <option value="psychiatrist">Psychiatrist</option>
+                                        </select>
+                                    </div>
+
+                                    <!-- Location Search -->
+                                    <div class="col-md-6">
+                                        <label for="location" class="form-label">Location</label>
+                                        <input type="text" class="form-control" id="location" name="location" placeholder="Enter city or zip code">
+                                    </div>
+
+                                    <!-- Doctor Name Search -->
+                                    <div class="col-12">
+                                        <label for="doctorName" class="form-label">Doctor Name (Optional)</label>
+                                        <input type="text" class="form-control" id="doctorName" name="doctorName" placeholder="Search by doctor name">
+                                    </div>
+
+                                    <!-- Search Button -->
+                                    <div class="col-12">
+                                        <div class="d-grid">
+                                            <button type="submit" class="btn btn-primary btn-lg">
+                                                <i class="bi bi-search me-2"></i>Search Doctors
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Specialty Links -->
+            <div class="row mt-5">
+                <div class="col-12">
+                    <div class="text-center">
+                        <h5 class="mb-4 text-muted">Popular Specialties</h5>
+                        <div class="d-flex flex-wrap justify-content-center gap-2">
+                            <a href="doctor-results.html?specialty=cardiologist" class="btn btn-outline-primary">
+                                <i class="bi bi-heart me-1"></i>Cardiologist
+                            </a>
+                            <a href="doctor-results.html?specialty=dentist" class="btn btn-outline-primary">
+                                <i class="bi bi-emoji-smile me-1"></i>Dentist
+                            </a>
+                            <a href="doctor-results.html?specialty=dermatologist" class="btn btn-outline-primary">
+                                <i class="bi bi-person me-1"></i>Dermatologist
+                            </a>
+                            <a href="doctor-results.html?specialty=pediatrician" class="btn btn-outline-primary">
+                                <i class="bi bi-people me-1"></i>Pediatrician
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
